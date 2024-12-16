@@ -1,0 +1,151 @@
+/* General Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.product-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-bottom: 10px;
+  position: relative;
+
+}
+
+/* Header Styling */
+.product-head {
+  text-align: center; 
+  margin-bottom: 10px; 
+  background-color:#0f5286;
+  margin-bottom: 30px;
+  border-radius: 10px;
+   padding: 30px;
+  margin-bottom: 30px; 
+  /* background-color:orangered; */
+  /* opacity: 0;   */
+  transform: translateY(60px); /* Start slightly below */
+  /* animation: bounceFade 2s ease-out forwards; Bounce fade animation */
+  animation-delay: 0.5s; /* Delay for Mission */
+}
+
+/* Bounce Fade Animation */
+/* @keyframes bounceFade {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateY(40px);
+  }
+  
+} */
+.product-head h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: white;
+  font-weight: bold;
+  position: relative;
+  padding: 20px;
+}
+.product-head h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  
+}
+.product-hr {
+  border: 0;
+  height: 3px;
+  background-color: black;
+  width: 50%;
+  margin: 10px auto; /* Center the horizontal rule */
+}
+
+/* Product Container */
+.product-container {
+  display: flex;
+  justify-content: center; /* Keep image and info in a row */
+  align-items: center; /* Align items vertically */
+  gap: 60px; /* Minimal gap between image and info */
+  padding-top: 20px;
+ 
+}
+
+/* Image Section */
+.content-image {
+  flex: 1; /* Take equal space */
+  max-width: 400px; /* Restrict maximum width */
+  
+}
+
+.content-image img {
+  width: 100%;
+  max-width: 700px;
+  height: 400px; /* Maintain aspect ratio */
+  position: relative;
+  top:-50px;
+  border-radius: 10px; /* Add rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add a shadow */
+}
+
+/* Info Section */
+.content-info {
+  flex: 1; /* Take equal space */
+  max-width: 100%; /* Restrict maximum width */
+  text-align: left;
+  margin-bottom: 200px;
+  border-radius: 15px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+  padding: 30px;
+}
+
+.content-info p {
+  font-size: 16px;
+  color: black;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.content-info h3 {
+  font-size: 18px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  color: black;
+  font-weight:600;
+}
+
+.content-info ul {
+  list-style-type: disc;
+  padding-left: 20px; /* Add indentation for the list */
+}
+
+.content-info li {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .product-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content-image,
+  .content-info {
+    max-width: 90%;
+    text-align: center;
+  }
+
+  .content-info ul {
+    padding-left: 0;
+  }
+}

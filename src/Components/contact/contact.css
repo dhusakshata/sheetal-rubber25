@@ -1,0 +1,241 @@
+* {
+  font-family: 'Arial', sans-serif;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+}
+
+.contact-page {
+  padding: 20px;
+  text-align: center;
+  
+}
+
+.contact-page h1 {
+  padding: 10px;
+  font-weight: bold;
+  font-size: 2.5rem;
+  color:black;
+
+ text-align: center;
+/* Animation properties */
+opacity: 0; /* Initially hidden */
+transform: translateY(-300px); /* Start above the viewport */
+animation: slideInFromTopH1 1.5s ease-out forwards; /* Trigger animation */
+}
+
+
+/* Keyframes for h1 slide-in animation */
+@keyframes slideInFromTopH1 {
+  0% {
+    transform: translateY(-300px); /* Starting position */
+    opacity: 0; /* Hidden */
+  }
+  100% {
+    transform: translateY(0); /* Final position */
+    opacity: 1; /* Fully visible */
+  }
+}
+
+
+.contact-hr{
+  border: 0;
+  height: 3px;
+  background-color: black;
+  width: 50%;
+  margin: 20px auto;
+}
+/* Row for Form and Info + Map */
+.row-container {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: -50px;
+  padding: 40px;
+}
+
+/* Form Section */
+.form-section {
+  flex: 1;
+  max-width: 600px;
+  animation: slideInFromLeft 1.5s ease-out forwards; /* Slide-in from the left */
+
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  font-size: 14px;
+  color: #555;
+  text-align: justify;
+
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid black;
+  font-size: 14px;
+  color: #333;
+  
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border: 1px solid #2e3d49; /* Elegant blue */
+}
+
+.form-group textarea {
+  resize: vertical;
+  height: 120px;
+}
+
+.submit-button {
+  padding: 12px 30px;
+  background-color: #007bff; 
+  color:black;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+}
+
+.submit-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  color: white; /* White text color on hover */
+}
+
+/*form Annimation*/
+/* Form Section Animation */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-300px); /* Start off-screen to the left */
+    opacity: 0; /* Hidden */
+  }
+  100% {
+    transform: translateX(0); /* Final position */
+    opacity: 1; /* Fully visible */
+  }
+}
+
+
+/* Info and Map Section (Column Layout) */
+.info-map-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 800px;
+  justify-content: flex-start;
+  align-items: center;
+  animation: slideInFromRight 1.5s ease-out forwards; /* Slide-in from the right */
+}
+
+.info-column {
+ margin-left: -350px;
+  display: flex;
+  flex-direction:column;
+justify-content: flex-start;
+
+}
+
+.info-column p {
+  color:black;
+  font-size: 14px;
+  text-align: left;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+}
+
+.map-column {
+  padding: 0;
+}
+
+.map-column iframe {
+  width: 700px;
+  height: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/*Annimation for map section*/
+
+/* Info and Map Section Animation */
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(300px); /* Start off-screen to the right */
+    opacity: 0; /* Hidden */
+  }
+  100% {
+    transform: translateX(0); /* Final position */
+    opacity: 1; /* Fully visible */
+  }
+}
+
+
+@media (max-width: 768px) {
+  .row-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-section {
+    max-width:300px;
+
+    margin-bottom: 30px;
+  }
+
+  .info-map-column {
+    width: 100%;
+  }
+.info-column{
+  margin-right: -400px;
+}
+.map-column{
+  margin-left: -10px;
+}
+  .info-column, .map-column {
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .row-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-section {
+    max-width:300px;
+
+    margin-bottom: 30px;
+  }
+
+  .info-map-column {
+    width: 100%;
+  }
+.info-column{
+  margin-right: -400px;
+}
+.map-column iframe{
+  margin-left: -10px;
+  width: 350px;
+}
+  .info-column, .map-column {
+    width: 100%;
+  }
+}

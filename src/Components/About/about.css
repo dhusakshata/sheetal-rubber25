@@ -1,0 +1,532 @@
+
+* {
+  font-family: 'Arial', sans-serif; 
+  font-style: normal; 
+
+  margin: 0; 
+  padding: 0; 
+}
+
+.about-section {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+.about-head {
+  
+  text-align: center; 
+  width: 100%;
+  height: 100px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  text-align: center; 
+  position: relative; 
+  overflow: hidden;
+  opacity: 0.8;
+  text-align: center;
+  position: relative; 
+  z-index: 1; 
+
+}
+
+.about-head h1{
+  padding: 10px;
+  font-weight: bolder;
+  font-size: 2.5rem;
+  color:black; 
+  z-index: 10; 
+  position: relative; 
+
+  /* Animation properties */
+  opacity: 0; /* Initially hidden */
+  transform: translateY(-300px); /* Start above the viewport */
+  animation: slideInFromTopH1 1.5s ease-out forwards; /* Trigger animation */
+}
+
+
+@keyframes slideInFromTopH1 {
+  0% {
+    transform: translateY(-300px); /* Starting position */
+    opacity: 0; /* Hidden */
+  }
+  100% {
+    transform: translateY(0); /* Final position */
+    opacity: 1; /* Fully visible */
+  }
+}
+
+
+
+/* Main content container */
+.about-content {
+  display: flex;
+  flex-direction: row; 
+  align-items: flex-start;
+  justify-content: space-between;
+
+   width: 1400px;
+  border-radius: 10px;
+ gap:30px;
+ overflow: hidden; 
+ flex-wrap: wrap; 
+ margin-bottom: 30px;
+}
+.about-content p{
+  font-size: 17px;
+
+}
+.about-content li{
+  font-size: 16px;
+ 
+}
+.about-content h6{
+font-size: 16px;
+font-weight: bold;
+color:  #ff5722;
+}
+
+/* Text content */
+.about-info {
+  flex: 1; 
+  padding: 20px;
+  color:black; /* White text */
+  padding: 40px;
+  margin-top: 40px;
+  transform: translateX(-150px); /* Start position: Above the viewport */
+  opacity: 0; /* Initially invisible */
+  animation: slideFromLeft 1.2s ease-out forwards, rotate3D 2s infinite ease-in-out 1.2s;
+}
+
+/* Keyframes for Slide-in from Top Animation */
+@keyframes slideFromLeft {
+  0% {
+    transform: translateX(150px); 
+    opacity: 0; 
+  }
+  100% {
+    transform: translateX(0); 
+    opacity: 1; 
+  }
+}
+
+
+
+
+/* Image container */
+.about-image {
+  flex: 1; 
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width:100%;
+  max-width: 1000px;
+  height: 500px;
+  margin-top:40px;
+ 
+  object-fit: cover;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateX(-150px); 
+  animation: fadeTop 1.5s ease-out forwards;
+  animation-delay: 0.5s; 
+ 
+}
+
+.building-image{
+  width: 800px; 
+  height: 100%;
+  transition: transform 1s ease, box-shadow 0.5s ease;
+  margin: 0px;
+}
+
+/* Keyframes for Fade-Top Animation */
+@keyframes fadeTop {
+  0% {
+    opacity: 0;
+    transform: translateX(-150px); /* Start below */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* End at normal position */
+  }
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    width: 700px;
+   
+  }
+
+  .about-info, .about-image {
+    width: 100%;
+    text-align: center;
+  }
+  .about-info p , li {
+    text-align: left;
+    padding: 10px;
+  
+  }
+
+  .misson-vision {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Mission, .vision {
+    width: 80%;
+  }
+}
+/* Responsive Design for Extra Small Screens */
+@media (max-width: 480px) {
+  .about-content {
+    flex-direction: column; 
+    gap: 10px;
+    width: 450px;
+
+    
+  }
+  .about-info {
+    text-align: center;
+    padding: 5px;
+    font-size: 10px;
+  }
+
+  .about-info p {
+    text-align: left;
+    padding: 10px;
+  
+  }
+
+  .building-image {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Mission & Vision Container */
+.misson-vision {
+  position: relative;
+  background-image: url("../../Images/mission-vision.jpg"); /* Set your background image path */
+  background-size: cover; /* Ensure the background covers the full div */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* No repeating of background */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 3rem;
+  padding: 2rem;
+  overflow: hidden; 
+  width: 100%;
+
+  margin: -10px;
+}
+/* Overlay for background image */
+.misson-vision::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark overlay */
+  z-index: -1; /* Make sure overlay is behind the content */
+}
+
+.misson-vision h1 {
+  color:black;
+  font-size: 2.5rem;
+  font-weight: bold;
+  
+}
+
+/* Individual Sections */
+.Mission,
+.vision {
+  width: 100%;
+  max-width: 1000px;
+  height: 250px;
+  background-color:#0f5286;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+margin-top: 30px;
+
+  transform: translateY(80px);
+  animation: bounceFade 2s ease-out forwards; 
+  animation-fill-mode: forwards;  
+}
+/* .vision{
+  margin: 30px;
+} */
+.Mission:hover,
+.vision:hover {
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+} 
+
+ .Mission {
+  animation-delay: 0.5s;  
+}
+
+.vision {
+  animation-delay: 1s; 
+ 
+} 
+
+hr {
+  width: 50%;
+  margin: 0.5rem auto 1rem auto;
+  border: none;
+  height: 2px;
+  background-color:whitesmoke;
+}
+.Mission h2,
+.vision h2 {
+  font-size: 2rem;
+  color:white;
+  margin-bottom: 1rem;
+  text-align: justify;
+  font-weight: bold;
+}
+
+.Mission h2{
+  margin-top: 20px;
+}
+.Mission p,
+.vision p {
+  font-size: 16px;
+  color:white;
+  margin: 0;
+  line-height: 1.4;
+  text-align: left;
+}
+
+/* Bounce Fade Animation */
+ @keyframes bounceFade {
+  0% {
+    opacity: 0;
+    transform: translateY(-80px);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} 
+
+/* Responsiveness */
+@media screen and (max-width: 768px) {
+  .misson-vision {
+    padding: 1rem;
+  }
+
+  .Mission h2,
+  .vision h2 {
+    font-size: 1.5rem;
+  }
+
+  .Mission p,
+  .vision p {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .Mission,
+  .vision {
+    padding: 1rem;
+  }
+
+  .Mission h2,
+  .vision h2 {
+    font-size: 1.3rem;
+  }
+}
+
+
+
+
+/* Responsiveness */
+@media screen and (max-width: 768px) {
+  .misson-vision {
+    padding: 40px;
+  }
+
+  .Mission h2,
+  .vision h2 {
+    font-size: 1.5rem;
+  }
+
+  .Mission p,
+  .vision p {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .Mission,
+  .vision {
+    padding: 40px;
+    height: 350px;
+    
+  }
+
+  .Mission h2,
+  .vision h2 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-info, .about-image {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px; /* Add spacing between image and text */
+  }
+
+  .misson-vision {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Mission, .vision {
+    width: 90%; /* Reduce the width to prevent overflow */
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 15px;
+  }
+
+  .about-head h1 {
+    font-size: 2em;
+  }
+
+  .about-info {
+    font-size: 1em;
+    padding: 0 10px;
+  }
+
+  .about-image {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .Mission, .vision {
+    width: 100%;
+    font-size: 1.1em;
+  }
+
+  hr {
+    width: 40%;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-head h1 {
+    font-size: 1.8em;
+  }
+
+  .about-info {
+    font-size: 0.9em;
+  }
+
+  .about-info ul {
+    padding-left: 15px;
+  }
+
+  .about-image {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .Mission h2, .vision h2 {
+    font-size: 1.8em;
+  }
+
+  .misson-vision {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Mission, .vision {
+    width: 100%;
+    font-size: 1em;
+    margin-bottom: 20px;
+  }
+
+  hr {
+    width: 60%;
+  }
+}
+
+/* Responsive Design for Extra Small Screens */
+@media (max-width: 300px) {
+  .about-content {
+    flex-direction: column; 
+    gap: 10px;
+    width: 300px;
+
+    
+  }
+  .about-info {
+    text-align: center;
+    padding: 5px;
+    font-size: 10px;
+  }
+
+  .about-info p {
+    text-align: left;
+    padding: 10px;
+  
+  }
+
+  .building-image {
+    width: 100%;
+    height: auto;
+  }
+  .Mission h2, .vision h2 {
+    font-size: 1.8em;
+  }
+
+  .Mission,
+  .vision {
+    padding: 40px;
+  }
+
+  .Mission p,
+  .vision p {
+    font-size: 12px;
+    margin-bottom: 30px;
+  }
+}
+
+

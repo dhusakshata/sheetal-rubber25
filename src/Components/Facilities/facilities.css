@@ -1,0 +1,240 @@
+* {
+  font-family: 'Arial', sans-serif; 
+  font-style: normal; 
+
+  margin: 0; 
+  padding: 0; 
+}
+
+/* Facilities Container */
+.facilities-container {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 20px;
+  background-color:whitesmoke;
+  padding: 20px;
+  text-align: center;
+
+}
+.facility-head{
+
+  border-radius: 10px;
+  padding: 30px;
+  margin-bottom: 30px;
+  background-color:#0f5286;
+  /* opacity: 0; Initial opacity for fade effect */
+  transform: translateY(60px); /* Start slightly below */
+  /* animation: bounceFade 2s ease-out forwards; Bounce fade animation */
+  animation-delay: 0.5s; /* Delay for Mission */
+
+}
+
+
+.facility-head h1{
+ 
+  text-align: center;
+  font-size: 2.5rem;
+  color:white;
+  position: relative;
+  padding: 20px;
+  font-weight: bold;
+ 
+}
+.facility-head h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+ 
+}
+/* .facility-hr{
+  border: 0;
+  height: 3px;
+  background-color: black;
+  width: 50%;
+  margin: 10px auto;
+  margin-top: -0.5px;
+} */
+/* Image Section */
+.facilities-images {
+  width: 100%;
+z-index: 1000;
+ 
+}
+
+
+.products-card {
+ 
+  text-align: center;
+  margin-top: -20px;
+  padding: 50px;
+  background-color:whitesmoke;
+ 
+  
+}
+.products-card img {
+  width: 100%; 
+  height: auto; 
+  border-radius: 8px;  
+  max-width: 350px; 
+  object-fit: contain; 
+  margin-top: 0;
+}
+
+
+.products-card h3 {
+  margin-top: 20px;
+  font-size: 18px;
+  color:black;
+   font-weight: bold;
+}
+
+
+.products-card:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+ 
+}
+
+/* 
+.facility-image:hover {
+  transform: scale(1.05); /* Slight zoom on hover 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+ */
+
+/* Information Section */
+.facilities-info {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+  max-width: 1000px;
+  margin: 0 auto; 
+  color: black;
+  margin-top: 40px;
+
+
+   /* Animation Properties */
+   transform: translateY(-50px); /* Start slightly above */
+   opacity: 0; /* Initially hidden */
+   animation: slideInFromTop 1.5s ease-out forwards; /* Trigger the slide-in animation */
+   animation-delay: 0.3s;
+}
+/* Keyframes for Slide-In Animation from Top */
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-50px); /* Start slightly above */
+    opacity: 0; /* Initially hidden */
+  }
+  100% {
+    transform: translateY(0); /* Final position */
+    opacity: 1; /* Fully visible */
+  }
+}
+
+.facility-image {
+  
+  object-fit: cover; 
+}
+
+
+.facilities-info p {
+  font-size: 16px;
+  line-height: 1.4;
+  margin-bottom: 20px;
+ 
+}
+
+.facilities-info ul {
+  list-style: none;
+  padding: 0;
+
+}
+
+.facilities-info ul li {
+  text-align: left;
+  font-size: 16px;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 30px;
+  color:black;
+
+}
+.facilities-info ul li::before {
+  content: "✔"; /* Checkmark bullet */
+  position: absolute;
+  left: 0;
+  color: black; /* Blue for emphasis */
+
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .images-grid {
+    flex-direction: column; /* Stack images vertically on small screens */
+    align-items: center;
+  }
+
+  .facility-image {
+    width: 80%; /* Reduce width for smaller devices */
+    height: auto;
+  }
+
+  .facilities-info {
+    padding: 20px;
+  }
+
+  .facilities-info p {
+    font-size: 1rem;
+  }
+
+  .facilities-info ul li {
+    font-size: 1rem;
+  }
+}
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .product-card img {
+    max-width: 200px; /* Smaller size on medium screens */
+  }
+}
+
+@media (max-width: 992px) {
+  .product-card img {
+    max-width: 180px; /* Smaller size for tablets */
+  }
+
+  .slick-slide {
+    padding: 0 10px; /* Add space between slides */
+  }
+}
+
+@media (max-width: 768px) {
+  .product-card img {
+    max-width: 150px; /* Even smaller size for smaller screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .product-card img {
+    max-width: 120px; /* Smallest size for very small screens */
+  }
+}
+
+/* Additional styling for slider */
+.slick-dots {
+  bottom: -30px;
+}
+
+.slick-prev, .slick-next {
+  font-size: 20px;
+  color: #333;
+  opacity: 0.7;
+}
+
+.slick-prev:hover, .slick-next:hover {
+  opacity: 1;
+}

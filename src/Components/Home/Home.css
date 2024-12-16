@@ -1,0 +1,632 @@
+* {
+  font-family: 'Arial', sans-serif; 
+  font-style: normal; 
+  margin: 0; 
+  padding: 0; 
+  }
+  .video-container {
+    width: 100%; 
+    height: 75vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+
+  }
+  
+  .production-video {
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; 
+  }
+
+/* About Us Container Fix */
+.about-us-container {
+  display: flex;
+  flex-direction: column; 
+  margin: 0 auto; /* Center-align and reset margins */
+  padding: 20px; /* Add padding for better spacing */
+  background-color: whitesmoke;
+  color: black;
+}
+
+/* About Us Title */
+.about-us-title {
+  margin: 20px 0; /* Add controlled spacing */
+  text-align: center;
+}
+
+.about-us-title h1 {
+  font-size: 2.5rem; /* Adjust for better spacing */
+  margin: 0 auto; 
+  font-weight: bold;
+
+  opacity: 0;
+  transform: translateY(-100%); /* Position the heading off-screen from the top */
+  transition: opacity 1s, transform 1s; /* Smooth transition for sliding down */
+}
+/* When the heading is in view, apply the 'in-view' class */
+.about-us-title h1.in-view {
+  opacity: 1;
+  transform: translateY(0); /* Move the heading to its original position */
+}
+
+
+/* Reduce Gap Between Video and About Section */
+.about-us-content {
+  display: flex;
+  flex-wrap: wrap; /* Adjust for responsiveness */
+  gap: 10px; /* Reduce gap between info and video */
+  justify-content: space-around; /* Center items */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .about-us-content {
+    flex-direction: column; 
+    align-items: center;
+    gap: 15px; /* Add slight gap for clarity */
+  }
+}
+/* Define the animation */
+/* @keyframes slideInFade {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px); 
+    
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} */
+
+
+.about-us-info,
+.about-us-video {
+  flex: 1; 
+  padding: 20px;
+  border-radius: 8px;
+  color: black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+}
+
+/*Fade effect for info*/
+/* .about-us-info {
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: fadeLeft 1s ease-out forwards;
+} */
+
+/* Keyframes for fade-left effect */
+/* @keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+} */
+
+/* Add an initial hidden state to the text */
+.about-us-info {
+  opacity: 0;
+  transform: translateX(-100%); /* Move text off-screen to the left initially */
+  transition: opacity 1s, transform 1s; /* Smooth transition for the effect */
+}
+
+/* When the section is in view, apply the 'in-view' class to trigger animation */
+.about-us-info.in-view {
+  opacity: 1;
+  transform: translateX(0); /* Move text to its original position */
+}
+
+
+/*Style for video bounce*/
+/* Bounce Fade Animation for Video */
+@keyframes bounceFadeTopToBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px); 
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(20px); 
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); 
+  }
+}
+
+/* Styling the Video Container */
+.about-us-video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden; /* Prevent overflow outside the container */
+ 
+}
+
+
+.about-us-video-element {
+  width: 100%;
+  border-radius: 8px;
+  max-width: 800px; /* Set a max width for responsiveness */
+  height: auto; /* Maintain aspect ratio */
+  opacity: 0; /* Start with opacity 0 */
+  animation: bounceFadeTopToBottom 2s ease-out forwards; /* Apply the animation */
+}
+
+@media (max-width: 768px) {
+  .about-us-content {
+    flex-direction: column; /* Stack items on smaller screens */
+  }
+
+  .about-us-title h1 {
+    font-size: 2.5rem; /* Reduce heading size */
+  }
+
+  
+}
+
+.read-more {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #007bff; /* Blue background */
+  color: black; /* Black text color */
+  font-size: 1rem; /* Adjust text size */
+  font-weight: bold; /* Make text bold */
+  text-transform: uppercase; /* Transform text to uppercase */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: all 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.read-more:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  color: white; /* White text color on hover */
+}
+
+.read-more a {
+  text-decoration: none; /* Remove underline from link */
+  color: inherit; /* Inherit the button's text color */
+}
+
+.read-more a:hover {
+  text-decoration: none; /* Ensure no underline on hover */
+}
+.read-more-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #007bff; /* Blue background */
+  color: black; /* Black text */
+  text-decoration: none; /* Remove underline */
+  font-weight: bold;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.read-more-link:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  color: white; /* White text on hover */
+}
+
+/* Products Section */
+.our-products {
+  background-color: #ff782b;
+  padding: 40px;
+  margin-bottom: 40px;
+  text-align: center;
+  height: 100%;
+}
+
+.our-products h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.our-products h3 {
+  position: relative;
+  top: -50px;
+  font-size: 18px;
+  text-decoration: none;
+  color: black;
+}
+
+.products-gallerys {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;  /* Adjust the items for better spacing */
+  gap: 20px; /* Adds space between the cards */
+}
+
+.product-cards {
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  gap: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: calc(33.33% - 20px); /* Default for larger screens (3 cards per row) */
+}
+
+.product-cards:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+.product-images {
+  width: 100%; 
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.product-cards:hover img {
+  transform: scale(1.0); /* Image zoom effect */
+}
+
+.product-cards h3 {
+  transition: color 0.3s ease;
+}
+
+.product-cards:hover h3 {
+  color: #0f5286; /* Change color on hover */
+}
+
+.slick-slide {
+  display: flex !important;
+  justify-content: center;
+}
+
+.slick-dots {
+  bottom: -20px;
+}
+/*style for arrow*/
+/* Hide the default "Prev" and "Next" text */
+.slick-prev:before, .slick-next:before {
+  content: ""; /* Removes the text */
+  font-size: 36px; /* Adjust size */
+  color: #000; /* Color of the arrow */
+  /* Optional: add some padding to make the arrow appear bigger */
+  padding: 10px;
+}
+
+/* Optional: Hover effect */
+.slick-prev:hover:before, .slick-next:hover:before {
+  color: #ff5722; /* Change color on hover */
+}
+
+/**/
+/* Responsive Adjustments */
+@media screen and (max-width: 1200px) {
+  .product-cards {
+    width: calc(25% - 20px); /* 4 cards per row */
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .product-cards {
+    width: calc(33.33% - 20px); /* 3 cards per row */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .product-cards {
+    width: calc(50% - 20px); /* 2 cards per row */
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .product-cards {
+    width: calc(100% - 20px); /* 1 card per row on very small screens */
+  }
+}
+
+/*  client logo container */
+
+.logo-container {
+  margin-top: 20px;
+  border: 1px solid gray;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 20px 0;
+  background-color:#0f5286;
+
+}
+
+.logo-container h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: white;
+  padding: 20px;
+}
+
+.swiper {
+  width: 100%; /* Set Swiper width to fit content */
+  margin: 0 auto; /* Center Swiper horizontally */
+  overflow: hidden; /* Prevent items from overflowing */
+}
+
+.swiper-slide {
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+}
+.logo-item {
+  width: 250px; /* Set a fixed width */
+  height: 150px; /* Set a fixed height */
+  display: block;
+  margin: 0 auto; 
+  padding: 10px; 
+  box-sizing: border-box; 
+  border-radius: 15px; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+  object-fit: contain; 
+  border: 3px solid #ddd; /* Beautiful light border */
+  background-color: white; /* White background for logo items */
+}
+
+/* Hover Effect: Scale, Shadow, and Border Color Change */
+.logo-item:hover {
+  
+  border-color: #3498db; 
+}
+
+/* Optional: Adjust navigation buttons */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #888; /* Lighter gray for better contrast */
+  font-size: 2px; /* Adjust button size */
+}
+
+/* Pagination dots for swiper */
+.swiper-pagination-bullet {
+  background-color: black;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: gray;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: gray; /* Highlight active dot */
+}
+
+
+
+/* For medium-sized screens (tablets) */
+@media (max-width: 1024px) {
+  .logo-item {
+    width: 100px; /* Smaller logos for tablets */
+    height: 100px;
+  }
+}
+
+/* For smaller screens (smartphones) */
+@media (max-width: 768px) {
+  .logo-item {
+    width: 80px; 
+    height: 80px;
+  }
+}
+
+/* For extra small screens (very small devices) */
+@media (max-width: 480px) {
+  .logo-item {
+    width: 60px; /* Smallest logos for very small screens */
+    height: 60px;
+  }
+
+  .logo-container h1 {
+    font-size: 1.8rem; /* Adjust title size for smaller screens */
+  }
+}
+
+
+/* Application Area */
+.application-area {
+  margin: 20px;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0px;
+  padding: 20px;
+  background-color:whitesmoke;
+  color: black;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  
+}
+.application-head {
+  text-align: center; /* Center align the content */
+  padding: 20px 10px; /* Add padding for spacing */
+  color: black; /* White text color */
+  margin: 20px 0; /* Add margin to separate from other elements */
+ 
+}
+
+.application-head h1 {
+  padding: 10px;
+  font-weight: bold;
+  font-size: 2.5rem;
+  color: black;
+  margin-top: -50px;
+  
+}
+
+
+.button-container {
+  display: flex;
+  gap: 2px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+
+}
+
+.app-button {
+  background-color:#0f5286;
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 150px;
+  text-align: center;
+}
+
+.app-button:hover {
+  background-color:whitesmoke;
+  color: black;
+  transform: translateY(-5px);
+}
+
+.app-button.active {
+  background-color:#288bd7; /* Highlight active button */
+}
+
+.image-display {
+  width: 500px;
+  height: 400px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -50px;
+}
+
+.image-display img {
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+  animation: slideIn 1s ease-out;
+}
+
+/* Slide-in animation from left */
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+/* Responsive Design for Products */
+@media screen and (max-width: 1200px) {
+  /* For larger tablets and desktops */
+  .products-gallerys {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three products per row */
+    gap: 20px;
+    justify-items: center;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  /* For tablets */
+  .products-gallerys {
+    grid-template-columns: repeat(2, 1fr); /* Two products per row */
+    gap: 15px;
+  }
+
+  .product-cards {
+    padding: 10px;
+  }
+
+  .product-images {
+    width: 150px;
+    height: auto;
+  }
+
+  .product-cards h3 {
+    font-size: 16px; /* Adjust font size for smaller screens */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* For smaller tablets and large phones */
+  .products-gallerys {
+    grid-template-columns: repeat(2, 1fr); /* Still two products per row */
+    gap: 10px;
+  }
+
+  .product-cards {
+    padding: 8px;
+  }
+
+  .product-images {
+    width: 120px;
+    height: auto;
+  }
+
+  .product-cards h3 {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  /* For small phones */
+  .products-gallerys {
+    grid-template-columns: 2fr; /* Single column layout */
+    gap: 2px;
+  }
+
+  .product-cards {
+    text-align: center; /* Center-align text for better layout */
+  }
+
+  .product-images {
+    width: 100px;
+    height: auto;
+  }
+
+  .product-cards h3 {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  /* For very small screens */
+  .products-gallerys {
+    gap: 5px;
+  }
+
+  .product-images {
+    width: 90px;
+  }
+
+  .product-cards h3 {
+    font-size: 12px;
+  }
+}
+
+/* for bigger screen */
+
+/* Responsive Adjustments */
+@media (max-width: 1440px) {
+  .products-gallerys {
+    gap: 15px;
+  }
+
+  .product-cards {
+    flex: 1 1 calc(25% - 15px); /* 4 cards per row */
+  }
+}
